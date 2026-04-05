@@ -1,0 +1,44 @@
+/* v4 버전 src/input.css */
+
+@import "tailwindcss";
+
+   /*
+    공통 클래스 정의
+      Tailwind는 CSS를 base → components → utilities 순서로 처리
+      우리가 만든 공통 클래스는 components 레이어에 넣는다
+      input.css에서만 가능
+
+      @layer와 @apply는 브라우저가 아니라 Tailwind 빌드 단계에서만 동작
+      
+      @apply는 Tailwind 유틸리티를 내가 만든 CSS 클래스로 묶어주는 문법이고,
+      @layer components는 그 클래스를 컴포넌트 레벨로 등록하는 선언
+
+      Tailwind → 컴포넌트 → 리액트 컴포넌트
+
+  */
+        
+ @layer components {
+    /* 카드 공통 */
+    .product-card {
+        @apply w-[280px] h-[395px]
+            bg-white
+            flex flex-col
+            gap-1;
+    }
+
+    .product-img {
+        @apply w-full mb-4;
+    }
+
+    .product-title {
+        @apply text-[17px] text-black font-bold;
+    }
+
+    .product-desc {
+        @apply text-[14px] text-gray-600 text-left;
+    }
+
+    .product-price {
+        @apply text-[17px] text-black font-bold;
+    }
+}
